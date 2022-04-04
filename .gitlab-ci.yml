@@ -35,7 +35,7 @@ test-gcc10:
   stage: test
   needs: ["build-gcc10"]
   script:
-    - find . -type d -name build -prune -o -iname "*.cpp" -print -o -iname "*.h" -print | xargs -P0 -I{} clang-format -style=file --dry-run -Werror {}
+    - find . -type d -name build -prune -o -iname "*.cpp" -print -o -iname "*.h" -print | xargs -P0 -I{} clang-format --style=file --dry-run -Werror {}
     - cd build/tests
     - ./tests
 
@@ -45,6 +45,6 @@ test-gcc11:
   stage: test
   needs: ["build-gcc11"]
   script:
-    - find . -type d -name build -prune -o -iname "*.cpp" -print -o -iname "*.h" -print | xargs -P0 -I{} clang-format -style=file --dry-run -Werror {}
+    - find . -type d -name build -prune -o -iname "*.cpp" -print -o -iname "*.h" -print | xargs -P0 -I{} clang-format --style=file --dry-run -Werror {}
     - cd build/tests
     - ./tests
