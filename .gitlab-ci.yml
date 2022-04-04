@@ -12,7 +12,7 @@ style-check:
   stage: style-check
   image: ubuntu:20.04
   script:
-    - find . -type d -name build -prune -o -iname "*.cpp" -print -o -iname "*.h" -print -exec clang-format -style=file --dry-run -Werror {} \;
+    - find . -type d -name build -prune -o -iname "*.cpp" -print -o -iname "*.h" -print -exec clang-format-11 -style=file --dry-run -Werror {} \;
 
 build-gcc10:
   image: gcc:10
