@@ -1,0 +1,35 @@
+stages:
+  - build
+  - test
+
+build-gcc10:
+  image: gcc:10
+  stage: build
+  script:
+    - echo "Compiling the code..."
+    - echo "Compile complete."
+
+build-gcc11:
+  image: gcc:11
+  stage: build
+  script:
+    - echo "Compiling the code..."
+    - echo "Compile complete."
+
+test-gcc10:
+  image: gcc:10
+  stage: test
+  needs: ["build-gcc10"]
+  script:
+    - echo "Running unit tests... This will take about 60 seconds."
+    - sleep 60
+    - echo "Code coverage is 90%"
+
+test-gcc11:
+  image: gcc:11
+  stage: test
+  needs: ["build-gcc11"]
+  script:
+    - echo "Running unit tests... This will take about 60 seconds."
+    - sleep 60
+    - echo "Code coverage is 90%"
