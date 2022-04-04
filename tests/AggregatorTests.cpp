@@ -5,7 +5,7 @@
 
 TEST_CASE("Created aggregator is empty", "[aggregator]") {
   swo::Aggregator a;
-  REQUIRE(a.getSum() == 0);
+  REQUIRE(a.getSum() == 1);
 }
 
 TEST_CASE("Aggregator accumulates added values", "[aggregator]") {
