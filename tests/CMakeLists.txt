@@ -1,3 +1,0 @@
-add_executable(AggregatorTests AggregatorTests.cpp)
-target_link_libraries(AggregatorTests Aggregator)
-add_test(NAME AggregatorTests COMMAND AggregatorTests)
