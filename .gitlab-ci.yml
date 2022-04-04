@@ -5,6 +5,7 @@ stages:
 before_script:
  - apt update --yes
  - apt install --yes cmake
+ - apt install --yes clang-format
 
 
 build-gcc10:
@@ -34,6 +35,7 @@ test-gcc10:
   stage: test
   needs: ["build-gcc10"]
   script:
+    - find . -iname "*.cpp" -or -iname "*.h" | xargs -P0 -I{} clang-format --dry-run -Werror {}
     - cd build/tests
     - ./tests
 
@@ -43,5 +45,6 @@ test-gcc11:
   stage: test
   needs: ["build-gcc11"]
   script:
+    - find . -iname "*.cpp" -or -iname "*.h" | xargs -P0 -I{} clang-format --dry-run -Werror {}
     - cd build/tests
     - ./tests
