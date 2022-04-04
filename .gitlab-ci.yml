@@ -34,7 +34,7 @@ test-gcc10:
   stage: test
   needs: ["build-gcc10"]
   script:
-    - cd build
+    - cd build/tests
     - ./tests
 
 
@@ -43,5 +43,5 @@ test-gcc11:
   stage: test
   needs: ["build-gcc11"]
   script:
-    - cd build
+    - cd build/tests
     - ./tests
