@@ -34,15 +34,14 @@ test-gcc10:
   stage: test
   needs: ["build-gcc10"]
   script:
-    - echo "Running unit tests... This will take about 60 seconds."
-    - sleep 60
-    - echo "Code coverage is 90%"
+    - cd build
+    - ./tests
+
 
 test-gcc11:
   image: gcc:11
   stage: test
   needs: ["build-gcc11"]
   script:
-    - echo "Running unit tests... This will take about 60 seconds."
-    - sleep 60
-    - echo "Code coverage is 90%"
+    - cd build
+    - ./tests
